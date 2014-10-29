@@ -49,13 +49,11 @@ public class RustSyntaxHighlighter extends SyntaxHighlighterBase {
 	public static final TextAttributesKey[] EMPTY_KEYS = new TextAttributesKey[0];
 
 	@NotNull
-	@Override
 	public Lexer getHighlightingLexer() {
 		return new FlexAdapter(new RustLexer((Reader) null));
 	}
 
 	@NotNull
-	@Override
 	public TextAttributesKey[] getTokenHighlights(IElementType type) {
 		if (type == KW_AS |
 			type == KW_BREAK |
