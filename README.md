@@ -31,7 +31,8 @@ If you want to live on the bleeding edge (or help out!) you will need:
     libraries_intellij=C:\\dev\\bin\\intellij-13.1.5\\
     rust_source=C:\\dev\\projects\\rust\\src\\
     ```
- * Run ```gradle grammar``` to generate the grammar and lexer. 
+ * Run ```gradle grammar``` to generate the grammar and lexer. **NOTE**: If you are using Intellij 14.1, use the 
+ latest release of GrammarKit located [here](https://github.com/JetBrains/Grammar-Kit/releases).
  * Run ```gradle runIdea``` or ```gradle debugIdea``` to start the plugin.
    Please note that ```$JAVA_HOME``` has to be set and point to a valid jdk otherwise idea will be unable to find tools.jar.
  
