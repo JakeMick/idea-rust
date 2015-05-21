@@ -11,7 +11,7 @@ import java.awt.*;
 public class CargoSettingsEditor extends SettingsEditor<CargoRunConfiguration> {
     private static String BUILD_TARGET = RustBundle.message("runner.cargo.target.build");
     private static String RUN_TARGET = RustBundle.message("runner.cargo.target.run");
-    private JComboBox<String> target;
+    private JComboBox target;
     private JTextField workingDir;
 
     @Override
@@ -44,7 +44,7 @@ public class CargoSettingsEditor extends SettingsEditor<CargoRunConfiguration> {
         panel.setLayout(new GridLayout(0, 2));
 
         panel.add(new JLabel(RustBundle.message("runner.cargo.label.target")));
-        panel.add(target = new JComboBox<String>(new String[] {
+        panel.add(target = new JComboBox(new String[] {
             RUN_TARGET,
             BUILD_TARGET,
         }));
