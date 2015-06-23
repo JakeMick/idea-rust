@@ -1,6 +1,11 @@
 package vektah.rust.ide.runner.cargo;
 
 public enum CargoTarget {
+    BUILD,
+    CLEAN,
+    DOC,
     RUN,
-    BUILD
+    TEST,
+    BENCH,
+    UPDATE
 }

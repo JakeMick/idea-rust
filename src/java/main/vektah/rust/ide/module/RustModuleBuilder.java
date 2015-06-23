@@ -46,7 +46,7 @@ public class RustModuleBuilder extends JavaModuleBuilder implements SourcePathsB
 			throw new RuntimeException("Unable to determine base directory!");
 		}
 
-		createFromTemplate("Rust Hello", directory, "main.rs");
+		createFromTemplate("Rust File", directory, "main.rs");
 		createFromTemplate("Cargo", baseDir, "Cargo.toml");
 	}
 

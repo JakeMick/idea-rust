@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import vektah.rust.i18n.RustBundle;
 
-public class RustSdkData implements SdkAdditionalData, PersistentStateComponent<RustSdkData> {
+public class RustSdkData implements SdkAdditionalData, PersistentStateComponent<RustSdkData>, Cloneable {
 	public String pathRustc;
 	public String version;
 

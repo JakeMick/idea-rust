@@ -50,12 +50,24 @@ public class CargoRunProfileState extends CommandLineState {
 
             commandLine.setExePath(CargoUtil.findCargoPath());
 
-            if (config.getTarget() == CargoTarget.RUN) {
-                commandLine.addParameter("run");
-            } else if (config.getTarget() == CargoTarget.BUILD) {
-                commandLine.addParameter("build");
+            CargoTarget target = config.getTarget();
+            String cmdParam = "build";
+
+            if (target == CargoTarget.BENCH) {
+                cmdParam = "bench";
+            } else if (target == CargoTarget.CLEAN) {
+                cmdParam = "clean";
+            } else if (target == CargoTarget.DOC) {
+                cmdParam = "doc";
+            } else if (target == CargoTarget.RUN) {
+                cmdParam = "run";
+            } else if (target == CargoTarget.TEST) {
+                cmdParam = "test";
+            } else if (target == CargoTarget.UPDATE) {
+                cmdParam = "update";
             }
 
+            commandLine.addParameter(cmdParam);
             commandLine.setWorkDirectory(config.getWorkingDirectory());
 
             return RustProcessHandler.runCommandLine(commandLine);

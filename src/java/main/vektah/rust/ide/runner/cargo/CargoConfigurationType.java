@@ -50,7 +50,7 @@ public class CargoConfigurationType implements ConfigurationType {
 		return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), CargoConfigurationType.class);
 	}
 
-	private class CargoConfigurationFactory extends ConfigurationFactory {
+	private static class CargoConfigurationFactory extends ConfigurationFactory {
 		public CargoConfigurationFactory(CargoConfigurationType cargoConfigurationType) {
 			super(cargoConfigurationType);
 		}

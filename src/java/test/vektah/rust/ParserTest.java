@@ -35,6 +35,7 @@ public class ParserTest extends ParsingTestCase {
 	public void testmodule() { doTest(true); }
 	public void testuse() { doTest(true); }
 	public void testprecedence() { doTest(true); }
+	public void testrange() { doTest(true); }
 
 	@Override
 	protected String getTestDataPath() {

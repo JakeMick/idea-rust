@@ -45,7 +45,7 @@ task generateLexer(type: JavaExec) {
 // Build grammar
 task grammar(type: JavaExec, dependsOn: generateLexer) {
     main = "org.intellij.grammar.Main"
-    classpath = intellij_libs.plus(files(file("grammar-kit.jar")))
+    classpath = intellij_libs.plus(files(file("/srv/idea/idea/plugins/GrammarKit/lib/grammar-kit.jar")))
     args = ["gen", "src${File.separator}bnf${File.separator}RustGrammar.bnf"]
 }
 
@@ -80,7 +80,7 @@ task copyIntoIdea(dependsOn: build, type: Copy) {
 
 task runIdea(type: JavaExec, dependsOn: copyIntoIdea) {
     main = "com.intellij.idea.Main"
-    classpath = intellij_libs.plus(files("$System.env.JAVA_HOME/lib/tools.jar"))
+    classpath = intellij_libs.plus(files("/usr/lib/jvm/java-8-oracle/lib/tools.jar"))
 
     systemProperty "idea.config.path", "build/run/config"
     systemProperty "idea.system.path", "build/run/system"
@@ -91,7 +91,7 @@ task runIdea(type: JavaExec, dependsOn: copyIntoIdea) {
 
 task debugIdea(type: JavaExec, dependsOn: copyIntoIdea) {
     main = "com.intellij.idea.Main"
-    classpath = intellij_libs.plus(files("$System.env.JAVA_HOME/lib/tools.jar"))
+    classpath = intellij_libs.plus(files("/usr/lib/jvm/java-8-oracle/lib/tools.jar"))
 
     systemProperty "idea.config.path", "build/run/config"
     systemProperty "idea.system.path", "build/run/system"

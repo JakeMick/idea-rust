@@ -14,7 +14,7 @@ import vektah.rust.ide.sdk.CargoUtil;
  * This is the model backing an instance of a run configuration.
  */
 public class CargoRunConfiguration extends RunConfigurationBase {
-    private CargoTarget target = CargoTarget.RUN;
+    private CargoTarget target = CargoTarget.BUILD;
     private String workingDirectory;
 
 

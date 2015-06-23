@@ -41,6 +41,7 @@ public abstract class RustImplItemMixin extends RustItemImpl implements RustImpl
             return Collections.emptyList();
         }
 
+        // FIXME: Null pointer?
         return getImplBlock().getImplBody().getFnItemList();
     }
 }
